@@ -193,8 +193,6 @@ Spring boot 2.2.x的版本进行了修复。可以将spring-boot-loader打包插
 </dependencyManagement>
 ```
 
-### springboot 加载外部jar
-
 ## 问题
 
 ### 为什么要重置`src/main/webapp`目录到`env`？
