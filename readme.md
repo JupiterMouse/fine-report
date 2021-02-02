@@ -16,9 +16,9 @@
 
 ### 帆软文件路径
 
-​	**准备帆软文件的`DOC_BASE`路径，例如设置为/data/hdsp/infra/fr10-web**
+​	**准备帆软文件的`DOC_BASE`路径，例如设置为/data/fr10-web**
 
-​    下载最新版本finereport10，将`webapps/webroot/`下所有文件和文件夹复制都**`/data/hdsp/infra/fr10-web/`** 下
+​    下载最新版本finereport10，将`webapps/webroot/`下所有文件和文件夹复制都**`/data/fr10-web/`** 下
 
 ![path](doc/path.png)
 
@@ -36,8 +36,8 @@ mvn clean package -DskipTest=true
 
 ```shell
 java -Xmx1g -Xms1g \
--DDOC_BASE='/data/hdsp/infra/fr10-web' \
--Dloader.path="BOOT-INF/classes/,file:/data/hdsp/infra/fr10-web/WEB-INF/classes,file:/data/hdsp/infra/fr10-web/WEB-INF/lib,BOOT-INF/lib/,/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/lib/tools.jar" \
+-DDOC_BASE='/data/fr10-web' \
+-Dloader.path="BOOT-INF/classes/,file:/data/fr10-web/WEB-INF/classes,file:/data/fr10-web/WEB-INF/lib,BOOT-INF/lib/,/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/lib/tools.jar" \
 -jar hdsp-fr-server.jar  > ./logs/hdsp-fr-server.log 2>&1 &
 ```
 
@@ -49,8 +49,8 @@ java -Xmx1g -Xms1g \
 1. `BOOT-INF/classes/`, hdsp-fr-server.jar包内`Spring-Boot-Classes`目录。
 2. `BOOT-INF/lib/`，hdsp-fr-server.jar包内`BOOT-INF/lib/`目录。
 3. `/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/lib/tools.jar` 这个修改，修改为服务器的java tools包的路径，在`$JAVA_HOME/lib/tools.jar`下，需要指定为绝对路径。
-4. 帆软的jar，指定绝对目录，在DOC_BASE 下 lib。例如`DOC_BASE` 为`/data/hdsp/infra/fr10-web `,指定为`file:/data/hdsp/infra/fr10-web/WEB-INF/lib`。
-5. 帆软重载的classes，指定绝对目录，在DOC_BASE 下classes。例如`DOC_BASE` 为`/data/hdsp/infra/fr10-web`，指定为`file:/data/hdsp/infra/fr10-web/WEB-INF/classes`。
+4. 帆软的jar，指定绝对目录，在DOC_BASE 下 lib。例如`DOC_BASE` 为`/data/fr10-web `,指定为`file:/data/fr10-web/WEB-INF/lib`。
+5. 帆软重载的classes，指定绝对目录，在DOC_BASE 下classes。例如`DOC_BASE` 为`/data/fr10-web`，指定为`file:/data/fr10-web/WEB-INF/classes`。
 
 ### 运行
 
